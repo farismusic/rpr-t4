@@ -8,7 +8,7 @@ public class Predmet {
     private ArrayList<Student> studenti;
     private String imePrezimeProfesora;
 
-    public Predmet(){};
+    public Predmet(){}
     public Predmet(String imePredmeta, String profesor, int ects){
         setIme(imePredmeta);
         this.setImePrezimeProfesora(profesor);
