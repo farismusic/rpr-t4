@@ -1,43 +1,56 @@
 package ba.unsa.etf.rpr.predavanje03;
 
+import java.util.ArrayList;
+
 public class Semestar {
     private int brojSemestra;
-    private int brojPredmeta;
-    private String smijer;
+    private PlanStudija planStudija;
     private int ects;
-    private Predmet[] predmeti;
-    private Predmet[] izborni;
+    private ArrayList<Predmet> predmeti;
 
     public Semestar(){};
-    public Semestar (int broj, int brojPredmeta){};
-    public void dodajPredmet(Predmet predmet){};
-    public void obrisiPredmet(Predmet predmet){};
+    public Semestar (int broj, PlanStudija plan, int ects){
+        setBrojSemestra(broj);
+        setPlanStudija(plan);
+        this.setEcts(ects);
+        setPredmeti(new ArrayList<Predmet>());
+    }
+    public void dodajPredmet(Predmet predmet){
+        getPredmeti().add(predmet);
+    }
+    public void obrisiPredmet(Predmet predmet){
+        getPredmeti().remove(predmet);
+    }
 
     public int getBrojSemestra() {
         return brojSemestra;
     }
 
-    public int getBrojPredmeta() {
-        return brojPredmeta;
+    public void setBrojSemestra(int brojSemestra) {
+        this.brojSemestra = brojSemestra;
     }
 
-    public String getSmijer() {
-        return smijer;
+    public PlanStudija getPlanStudija() {
+        return planStudija;
+    }
+
+    public void setPlanStudija(PlanStudija planStudija) {
+        this.planStudija = planStudija;
     }
 
     public int getEcts() {
         return ects;
     }
 
-    public Predmet[] getPredmeti() {
+    public void setEcts(int ects) {
+        this.ects = ects;
+    }
+
+    public ArrayList<Predmet> getPredmeti() {
         return predmeti;
     }
 
-    public Predmet[] getIzborni() {
-        return izborni;
-    }
-
-    public void setEcts(int ects) {
-        this.ects = ects;
+    public void setPredmeti(ArrayList<Predmet> predmeti) {
+        this.predmeti = predmeti;
     }
 }
