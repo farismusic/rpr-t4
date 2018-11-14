@@ -1,6 +1,8 @@
 package ba.unsa.etf.rpr.predavanje03;
 
-public class Student {
+import java.util.ArrayList;
+
+public class Student extends ArrayList<Student> {
     private String ime;
     private String prezime;
     private PlanStudija planStudija;
